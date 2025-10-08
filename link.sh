@@ -2,6 +2,6 @@
 
 npm install
 rm -R node_modules/pxt-core
-rm -R node_modules/pxt-library
+rm -R node_modules/pxt-common-packages
 pxt link ../pxt
-pxt link ../pxt-library
+pxt link ../pxt-common-packages

@@ -4,6 +4,10 @@ namespace config {
     export const PIN_ONBOARD_DOTSTAR_CLOCK = DAL.PA01;
     export const NUM_ONBOARD_DOTSTARS = 1;
 
+    // NeoPixel support
+    export const PIN_NEOPIXEL = DAL.PA00;
+    export const NUM_NEOPIXELS = 1;
+
     export const PIN_D0 = DAL.PA08;
     export const PIN_D1 = DAL.PA02;
     export const PIN_D2 = DAL.PA09;

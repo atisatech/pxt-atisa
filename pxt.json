@@ -1,0 +1,17 @@
+{
+    "name": "pxt-atisa",
+    "version": "0.0.1",
+    "description": "PXT target for ATISA educational platform",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "pxtarget.json"
+    ],
+    "testFiles": [
+        "tests.ts"
+    ],
+    "public": true,
+    "preferredEditor": "ts"
+}
