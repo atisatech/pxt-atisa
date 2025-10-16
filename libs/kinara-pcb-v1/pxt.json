@@ -1,0 +1,33 @@
+{
+    "name": "kinara-pcb-v1",
+    "description": "Support for Kinara PCB v1 powered by ItsyBitsy M0 Express",
+  "files": [
+    "README.md",
+    "config.ts",
+    "device.d.ts",
+    "board.json",
+    "board.svg",
+    "kinara.ts"
+  ],
+    "core": true,
+    "dependencies": {
+        "core---samd": "file:../core---samd",
+        "buttons": "file:../buttons",
+        "light": "file:../light",
+        "touch": "file:../touch",
+        "mixer---samd": "file:../mixer---samd",
+        "serial": "file:../serial",
+        "accelerometer": "file:../accelerometer"
+    },
+    "public": true,
+    "compileServiceVariant": "samd21",
+    "features": [
+        "uf2",
+        "light",
+        "serial",
+        "pinled",
+        "music",
+        "accelerometer"
+    ]
+}
+

@@ -1,145 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" height="300" width="400" viewBox="0 0 400 300">
-  <!-- Reddish-brown 3D-printed frame with exact shape from DXF file -->
-  <path d="M 30 30 
-           L 200 30 
-           C 220 30 230 40 230 60
-           L 230 80
-           C 230 100 220 110 200 110
-           L 180 110
-           C 160 110 150 120 150 140
-           L 150 160
-           C 150 180 160 190 180 190
-           L 200 190
-           C 220 190 230 200 230 220
-           L 230 240
-           C 230 260 220 270 200 270
-           L 30 270
-           C 10 270 0 260 0 240
-           L 0 220
-           C 0 200 10 190 30 190
-           L 50 190
-           C 70 190 80 180 80 160
-           L 80 140
-           C 80 120 70 110 50 110
-           L 30 110
-           C 10 110 0 100 0 80
-           L 0 60
-           C 0 40 10 30 30 30 Z" 
-        fill="#8B4513" stroke="#000" stroke-width="2"/>
+  <!-- Board outline -->
+  <rect x="50" y="30" width="300" height="240" rx="10" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
   
-  <!-- White PCB with matching organic shape -->
-  <path d="M 35 35 
-           L 195 35 
-           C 215 35 225 45 225 65
-           L 225 85
-           C 225 105 215 115 195 115
-           L 175 115
-           C 155 115 145 125 145 145
-           L 145 165
-           C 145 185 155 195 175 195
-           L 195 195
-           C 215 195 225 205 225 225
-           L 225 245
-           C 215 245 215 265 195 265
-           L 35 265
-           C 15 265 5 255 5 235
-           L 5 215
-           C 5 195 15 185 35 185
-           L 55 185
-           C 75 185 85 175 85 155
-           L 85 135
-           C 85 115 75 105 55 105
-           L 35 105
-           C 15 105 5 95 5 75
-           L 5 55
-           C 5 35 15 25 35 25 Z" 
-        fill="#ffffff" stroke="#000" stroke-width="1"/>
+  <!-- Board title -->
+  <text x="200" y="20" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">Kinara PCB v1</text>
   
-  <!-- LED Grid (25 LEDs in 7-7-7-4 pattern) -->
-  <!-- Top row (7 LEDs) -->
-  <circle cx="60" cy="60" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED1"/>
-  <circle cx="85" cy="60" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED2"/>
-  <circle cx="110" cy="60" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED3"/>
-  <circle cx="135" cy="60" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED4"/>
-  <circle cx="160" cy="60" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED5"/>
-  <circle cx="185" cy="60" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED6"/>
-  <circle cx="210" cy="60" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED7"/>
+  <!-- D9 NeoPixel Strip (14 LEDs) -->
+  <!-- Row 1: 7 LEDs (D9_0 to D9_6) -->
+  <circle cx="80" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_0"/>
+  <circle cx="120" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_1"/>
+  <circle cx="160" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_2"/>
+  <circle cx="200" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_3"/>
+  <circle cx="240" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_4"/>
+  <circle cx="280" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_5"/>
+  <circle cx="320" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_6"/>
   
-  <!-- Second row (7 LEDs) -->
-  <circle cx="60" cy="85" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED8"/>
-  <circle cx="85" cy="85" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED9"/>
-  <circle cx="110" cy="85" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED10"/>
-  <circle cx="135" cy="85" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED11"/>
-  <circle cx="160" cy="85" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED12"/>
-  <circle cx="185" cy="85" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED13"/>
-  <circle cx="210" cy="85" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED14"/>
+  <!-- Row 2: 7 LEDs (D9_7 to D9_13) -->
+  <circle cx="80" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_7"/>
+  <circle cx="120" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_8"/>
+  <circle cx="160" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_9"/>
+  <circle cx="200" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_10"/>
+  <circle cx="240" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_11"/>
+  <circle cx="280" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_12"/>
+  <circle cx="320" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_13"/>
   
-  <!-- Third row (7 LEDs) -->
-  <circle cx="60" cy="110" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED15"/>
-  <circle cx="85" cy="110" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED16"/>
-  <circle cx="110" cy="110" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED17"/>
-  <circle cx="135" cy="110" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED18"/>
-  <circle cx="160" cy="110" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED19"/>
-  <circle cx="185" cy="110" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED20"/>
-  <circle cx="210" cy="110" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED21"/>
+  <!-- D7 NeoPixel Strip (11 LEDs) -->
+  <!-- Row 3: 6 LEDs (D7_0 to D7_5) -->
+  <circle cx="100" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_0"/>
+  <circle cx="140" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_1"/>
+  <circle cx="180" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_2"/>
+  <circle cx="220" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_3"/>
+  <circle cx="260" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_4"/>
+  <circle cx="300" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_5"/>
   
-  <!-- Bottom row (4 LEDs) -->
-  <circle cx="85" cy="135" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED22"/>
-  <circle cx="110" cy="135" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED23"/>
-  <circle cx="135" cy="135" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED24"/>
-  <circle cx="160" cy="135" r="3" fill="#ff0000" stroke="#000" stroke-width="0.5" id="LED25"/>
+  <!-- Row 4: 5 LEDs (D7_6 to D7_10) -->
+  <circle cx="120" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_6"/>
+  <circle cx="160" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_7"/>
+  <circle cx="200" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_8"/>
+  <circle cx="240" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_9"/>
+  <circle cx="280" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_10"/>
   
-  <!-- Pin headers on the right side -->
-  <!-- Top header (10 pins in 2 columns of 5) -->
-  <rect x="250" y="60" width="12" height="60" fill="#c0c0c0" stroke="#000" stroke-width="1"/>
-  <circle cx="256" cy="70" r="1.5" fill="#000" id="P1"/>
-  <circle cx="256" cy="80" r="1.5" fill="#000" id="P2"/>
-  <circle cx="256" cy="90" r="1.5" fill="#000" id="P3"/>
-  <circle cx="256" cy="100" r="1.5" fill="#000" id="P4"/>
-  <circle cx="256" cy="110" r="1.5" fill="#000" id="P5"/>
-  
-  <rect x="270" y="60" width="12" height="60" fill="#c0c0c0" stroke="#000" stroke-width="1"/>
-  <circle cx="276" cy="70" r="1.5" fill="#000" id="P6"/>
-  <circle cx="276" cy="80" r="1.5" fill="#000" id="P7"/>
-  <circle cx="276" cy="90" r="1.5" fill="#000" id="P8"/>
-  <circle cx="276" cy="100" r="1.5" fill="#000" id="P9"/>
-  <circle cx="276" cy="110" r="1.5" fill="#000" id="P10"/>
-  
-  <!-- Bottom header (5 pins in single column) -->
-  <rect x="250" y="180" width="12" height="50" fill="#c0c0c0" stroke="#000" stroke-width="1"/>
-  <circle cx="256" cy="190" r="1.5" fill="#000" id="P11"/>
-  <circle cx="256" cy="200" r="1.5" fill="#000" id="P12"/>
-  <circle cx="256" cy="210" r="1.5" fill="#000" id="P13"/>
-  <circle cx="256" cy="220" r="1.5" fill="#000" id="P14"/>
-  <circle cx="256" cy="230" r="1.5" fill="#000" id="P15"/>
-  
-  <!-- Additional test points (4 pins in square formation) -->
-  <circle cx="290" cy="200" r="1" fill="#000" id="P16"/>
-  <circle cx="300" cy="200" r="1" fill="#000" id="P17"/>
-  <circle cx="290" cy="210" r="1" fill="#000" id="P18"/>
-  <circle cx="300" cy="210" r="1" fill="#000" id="P19"/>
-  <circle cx="310" cy="205" r="1" fill="#000" id="P20"/>
-  
-  <!-- Board branding -->
-  <text x="60" y="200" font-family="Arial" font-size="10" font-weight="bold" fill="#000">Kinara PCB V1.0</text>
-  <text x="60" y="215" font-family="Arial" font-size="8" fill="#666">25 NeoPixel LEDs</text>
-  
-  <!-- Pin labels -->
-  <text x="270" y="68" font-family="Arial" font-size="5" fill="#000">P1</text>
-  <text x="270" y="78" font-family="Arial" font-size="5" fill="#000">P2</text>
-  <text x="270" y="88" font-family="Arial" font-size="5" fill="#000">P3</text>
-  <text x="270" y="98" font-family="Arial" font-size="5" fill="#000">P4</text>
-  <text x="270" y="108" font-family="Arial" font-size="5" fill="#000">P5</text>
-  
-  <text x="290" y="68" font-family="Arial" font-size="5" fill="#000">P6</text>
-  <text x="290" y="78" font-family="Arial" font-size="5" fill="#000">P7</text>
-  <text x="290" y="88" font-family="Arial" font-size="5" fill="#000">P8</text>
-  <text x="290" y="98" font-family="Arial" font-size="5" fill="#000">P9</text>
-  <text x="290" y="108" font-family="Arial" font-size="5" fill="#000">P10</text>
-  
-  <text x="270" y="188" font-family="Arial" font-size="5" fill="#000">P11</text>
-  <text x="270" y="198" font-family="Arial" font-size="5" fill="#000">P12</text>
-  <text x="270" y="208" font-family="Arial" font-size="5" fill="#000">P13</text>
-  <text x="270" y="218" font-family="Arial" font-size="5" fill="#000">P14</text>
-  <text x="270" y="228" font-family="Arial" font-size="5" fill="#000">P15</text>
+  <!-- Labels -->
+  <text x="60" y="80" font-family="Arial" font-size="12" font-weight="bold">D9</text>
+  <text x="60" y="160" font-family="Arial" font-size="12" font-weight="bold">D7</text>
 </svg>

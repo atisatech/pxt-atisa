@@ -18,208 +18,33 @@
         "labels": ["D10", "D11", "D12", "D13", "A0", "A1", "A2", "A3", "A4", "A5"]
       }
     ],
-    "leds": [
-      {
-        "x": 50,
-        "y": 30,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED1"
-      },
-      {
-        "x": 80,
-        "y": 30,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED2"
-      },
-      {
-        "x": 110,
-        "y": 30,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED3"
-      },
-      {
-        "x": 140,
-        "y": 30,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED4"
-      },
-      {
-        "x": 170,
-        "y": 30,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED5"
-      },
-      {
-        "x": 200,
-        "y": 30,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED6"
-      },
-      {
-        "x": 230,
-        "y": 30,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED7"
-      },
-      {
-        "x": 50,
-        "y": 60,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED8"
-      },
-      {
-        "x": 80,
-        "y": 60,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED9"
-      },
-      {
-        "x": 110,
-        "y": 60,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED10"
-      },
-      {
-        "x": 140,
-        "y": 60,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED11"
-      },
-      {
-        "x": 170,
-        "y": 60,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED12"
-      },
-      {
-        "x": 200,
-        "y": 60,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED13"
-      },
-      {
-        "x": 50,
-        "y": 90,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED14"
-      },
-      {
-        "x": 80,
-        "y": 90,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED15"
-      },
-      {
-        "x": 110,
-        "y": 90,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED16"
-      },
-      {
-        "x": 140,
-        "y": 90,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED17"
-      },
-      {
-        "x": 170,
-        "y": 90,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED18"
-      },
-      {
-        "x": 200,
-        "y": 90,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED19"
-      },
-      {
-        "x": 50,
-        "y": 120,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED20"
-      },
-      {
-        "x": 80,
-        "y": 120,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED21"
-      },
-      {
-        "x": 110,
-        "y": 120,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED22"
-      },
-      {
-        "x": 140,
-        "y": 120,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED23"
-      },
-      {
-        "x": 170,
-        "y": 120,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED24"
-      },
-      {
-        "x": 200,
-        "y": 120,
-        "w": 8,
-        "h": 8,
-        "color": "#ff0000",
-        "label": "LED25"
-      }
-    ],
+                "leds": [
+                  {"x": 80, "y": 60, "color": "neopixel", "label": "NEOPIXEL_0"},
+                  {"x": 120, "y": 60, "color": "neopixel", "label": "NEOPIXEL_1"},
+                  {"x": 160, "y": 60, "color": "neopixel", "label": "NEOPIXEL_2"},
+                  {"x": 200, "y": 60, "color": "neopixel", "label": "NEOPIXEL_3"},
+                  {"x": 240, "y": 60, "color": "neopixel", "label": "NEOPIXEL_4"},
+                  {"x": 280, "y": 60, "color": "neopixel", "label": "NEOPIXEL_5"},
+                  {"x": 320, "y": 60, "color": "neopixel", "label": "NEOPIXEL_6"},
+                  {"x": 80, "y": 100, "color": "neopixel", "label": "NEOPIXEL_7"},
+                  {"x": 120, "y": 100, "color": "neopixel", "label": "NEOPIXEL_8"},
+                  {"x": 160, "y": 100, "color": "neopixel", "label": "NEOPIXEL_9"},
+                  {"x": 200, "y": 100, "color": "neopixel", "label": "NEOPIXEL_10"},
+                  {"x": 240, "y": 100, "color": "neopixel", "label": "NEOPIXEL_11"},
+                  {"x": 280, "y": 100, "color": "neopixel", "label": "NEOPIXEL_12"},
+                  {"x": 320, "y": 100, "color": "neopixel", "label": "NEOPIXEL_13"},
+                  {"x": 100, "y": 140, "color": "neopixel", "label": "NEOPIXEL_14"},
+                  {"x": 140, "y": 140, "color": "neopixel", "label": "NEOPIXEL_15"},
+                  {"x": 180, "y": 140, "color": "neopixel", "label": "NEOPIXEL_16"},
+                  {"x": 220, "y": 140, "color": "neopixel", "label": "NEOPIXEL_17"},
+                  {"x": 260, "y": 140, "color": "neopixel", "label": "NEOPIXEL_18"},
+                  {"x": 300, "y": 140, "color": "neopixel", "label": "NEOPIXEL_19"},
+                  {"x": 120, "y": 180, "color": "neopixel", "label": "NEOPIXEL_20"},
+                  {"x": 160, "y": 180, "color": "neopixel", "label": "NEOPIXEL_21"},
+                  {"x": 200, "y": 180, "color": "neopixel", "label": "NEOPIXEL_22"},
+                  {"x": 240, "y": 180, "color": "neopixel", "label": "NEOPIXEL_23"},
+                  {"x": 280, "y": 180, "color": "neopixel", "label": "NEOPIXEL_24"}
+                ],
     "buttons": [],
     "touchPads": []
   },
@@ -244,31 +69,31 @@
     "A3": "A3",
     "A4": "A4",
     "A5": "A5",
-    "LED1": "D2",
-    "LED2": "D3",
-    "LED3": "D4",
-    "LED4": "D5",
-    "LED5": "D6",
-    "LED6": "D7",
-    "LED7": "D8",
-    "LED8": "D9",
-    "LED9": "D10",
-    "LED10": "D11",
-    "LED11": "D12",
-    "LED12": "D13",
-    "LED13": "A0",
-    "LED14": "A1",
-    "LED15": "A2",
-    "LED16": "A3",
-    "LED17": "A4",
-    "LED18": "A5",
-    "LED19": "D2",
-    "LED20": "D3",
-    "LED21": "D4",
-    "LED22": "D5",
-    "LED23": "D6",
-    "LED24": "D7",
-    "LED25": "D8"
+              "NEOPIXEL_0": "NEOPIXEL_0",
+              "NEOPIXEL_1": "NEOPIXEL_1",
+              "NEOPIXEL_2": "NEOPIXEL_2",
+              "NEOPIXEL_3": "NEOPIXEL_3",
+              "NEOPIXEL_4": "NEOPIXEL_4",
+              "NEOPIXEL_5": "NEOPIXEL_5",
+              "NEOPIXEL_6": "NEOPIXEL_6",
+              "NEOPIXEL_7": "NEOPIXEL_7",
+              "NEOPIXEL_8": "NEOPIXEL_8",
+              "NEOPIXEL_9": "NEOPIXEL_9",
+              "NEOPIXEL_10": "NEOPIXEL_10",
+              "NEOPIXEL_11": "NEOPIXEL_11",
+              "NEOPIXEL_12": "NEOPIXEL_12",
+              "NEOPIXEL_13": "NEOPIXEL_13",
+              "NEOPIXEL_14": "NEOPIXEL_14",
+              "NEOPIXEL_15": "NEOPIXEL_15",
+              "NEOPIXEL_16": "NEOPIXEL_16",
+              "NEOPIXEL_17": "NEOPIXEL_17",
+              "NEOPIXEL_18": "NEOPIXEL_18",
+              "NEOPIXEL_19": "NEOPIXEL_19",
+              "NEOPIXEL_20": "NEOPIXEL_20",
+              "NEOPIXEL_21": "NEOPIXEL_21",
+              "NEOPIXEL_22": "NEOPIXEL_22",
+              "NEOPIXEL_23": "NEOPIXEL_23",
+              "NEOPIXEL_24": "NEOPIXEL_24"
   },
   "groundPins": ["GND"],
   "threeVoltPins": ["VCC"],
