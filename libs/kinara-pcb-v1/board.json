@@ -45,5 +45,5 @@
     "SDA": "A4",
     "SCL": "A5"
   },
-  "onboardComponents": ["pixels"]
+  "onboardComponents": ["neopixel", "pixels"]
 }
