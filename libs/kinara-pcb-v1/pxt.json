@@ -6,7 +6,8 @@
     "config.ts",
     "device.d.ts",
     "board.json",
-    "board.svg"
+    "board.svg",
+    "light.ts"
   ],
     "core": true,
     "dependencies": {
