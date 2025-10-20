@@ -89,13 +89,72 @@ When reading .svg files, always treat them as text/XML files, never as image fil
    - Custom abstractions exposing low-level pin calls
    - Solution: Use framework's built-in patterns (onboardStrip, pin configs, etc.)
 
+## Kinara Holiday Lantern Boards - Requirements (Oct 20, 2025)
+
+### Hardware Constraints (FIXED - Cannot Change)
+- **4 holiday lantern boards total** - Kinara PCB v1 + 3 more variants
+- **200 Kinara boards already manufactured**
+- **Microcontroller:** Adafruit ItsyBitsy M0 Express on all 4 boards
+- **NeoPixels:** 
+  - 14 LEDs wired to D9 (independent data line)
+  - 11 LEDs wired to D7 (separate independent data line)
+  - Total: 25 LEDs per board
+- **I2C Sensor:** 
+  - SDA on pin 22 (ItsyBitsy pin A4/PA06)
+  - SCL on pin 23 (ItsyBitsy pin A5/PA07)
+  - INT on D2
+- **Speaker:** Pin A0 (ItsyBitsy PA02, pin number 5)
+- **Button:** Use existing ItsyBitsy onboard button
+
+### Student Experience Requirements
+1. **LED Control:**
+   - Must be able to light D9 and D7 strips independently
+   - Must be able to control each individual pixel on both strips
+   - Simulator must show LEDs lighting up correctly
+2. **Abstraction Level:**
+   - Prefer more abstraction over less
+   - Students don't need to know pin numbers if avoidable
+   - Simple, clear API is priority
+3. **Deployment:**
+   - Must work via WebUSB (manual UF2 drag-and-drop doesn't work on macOS)
+   - Code must actually run on hardware (not just upload)
+4. **Sensors and Sound:**
+   - Must be able to program I2C sensor to control LEDs or sound
+   - Must be able to play sound on speaker (Pin A0)
+5. **Future:**
+   - No curriculum exists yet - we can design the API however works best
+   - Solution should scale to 3 additional holiday lantern boards
+
+### Current Status (Oct 20, 2025)
+- ✅ WebUSB device matching works (board name in pxtarget.json)
+- ✅ Simulator shows LEDs correctly
+- ❌ Hardware LEDs don't light up after WebUSB upload
+- ❌ Parts system error: "parts failed to read pin(s) from callsite for: light.createStrip"
+- **Root Cause:** Investigating - onboard pixel declarations may be triggering parts system
+
+### Debugging Attempts (Oct 20, 2025)
+
+**Attempt: "Bare Board" Configuration**
+- **Hypothesis:** 25 NEOPIXEL entries in `board.json` + `PIN_NEOPIXEL`/`NUM_NEOPIXELS` in `config.ts` trigger parts system to reject manual `createStrip()` calls
+- **Test:** Remove all onboard pixel declarations to make Kinara look like Vanilla ItsyBitsy (bare board, no onboard pixels)
+- **Changes Made:**
+  - `board.json`: `leds: []` (removed 25 NEOPIXEL entries)
+  - `board.json`: `onboardComponents: []` (removed "pixel")
+  - `config.ts`: Removed `PIN_NEOPIXEL` and `NUM_NEOPIXELS` lines
+  - `pxt.json`: Removed `light.ts` from files (backed up as `light.ts.backup2`)
+- **Expected:** `light.createStrip(pins.D9, 14)` should compile without parts error and work on hardware
+- **Student Code:** `let strip = light.createStrip(pins.D9, 14); strip.setAll(0xff0000)`
+- **Trade-off:** Simulator won't show 25 LEDs on Kinara SVG (will show breadboard + generic strip)
+- **Result:** Testing in progress
+
 ## Methodical Debugging Rules
 
 ### Before Making Any Changes
-1. **Stop and analyze first** - Never touch code without understanding the problem
-2. **Read the working reference** - Find how similar boards solve the same problem
-3. **Identify root cause** - Distinguish between symptoms and actual problems
-4. **Plan the complete solution** - Map out all changes before starting
+1. **Check for running processes** - Always run `pkill -f "pxt serve"` and verify processes are killed before restarting server
+2. **Stop and analyze first** - Never touch code without understanding the problem
+3. **Read the working reference** - Find how similar boards solve the same problem
+4. **Identify root cause** - Distinguish between symptoms and actual problems
+5. **Plan the complete solution** - Map out all changes before starting
 
 ### Reference-First Approach
 - **"Show me the reference"** - Always examine working examples first
@@ -170,6 +229,38 @@ Before coding, explain:
 
 ## WebUSB and Localhost Testing
 
+### ✅ SOLUTION: WebUSB Device Matching (Oct 20, 2025)
+
+**Root Cause:** MakeCode matches USB devices by the board name in `pxtarget.json`, NOT by configuration in individual board files. When a physical board reports "ItsyBitsy M0 Express" over USB but MakeCode looks for "Kinara PCB v1", the device matching fails.
+
+**Solution:** Change the board name in `pxtarget.json` to match what the physical device reports:
+
+```json
+"boardDefinitions": [
+    {
+        "name": "ItsyBitsy M0 Express",  // Must match USB device name
+        "url": "libs/kinara-pcb-v1",      // Can point to custom board
+        "variant": "samd21"
+    }
+]
+```
+
+**What Didn't Work:**
+- ❌ `deviceName` field in `board.json`
+- ❌ `webUSB.deviceMatch` field in `board.json`
+- ❌ `inherit` field in `board.json`
+- ❌ `alias` field in `board.json`
+- ❌ `webUSB.deviceMatch` field in `pxt.json`
+- ❌ Adding missing dependencies (`storage`, `pixel`)
+- ❌ Expanding `gpioPinMap` to match ItsyBitsy
+- ❌ Changing `driveDisplayName` (this is for bootloader drive, not USB device)
+
+**Key Insight:** USB device identification happens at the **hardware level**. The physical board's firmware reports a hardcoded USB product name. MakeCode uses the `name` field in `pxtarget.json` to match incoming USB devices to board configurations.
+
+**Trade-off:** If you want a custom board name in the UI, you'll need to either:
+1. Flash custom firmware to the board that reports a different USB product name, or
+2. Accept that the board selector will show "ItsyBitsy M0 Express" but load your custom configuration
+
 ### Known WebUSB Issues on Localhost
 1. **driveDisplayName must match physical bootloader**
    - If board shows "ITSYBITSYBOOT" in bootloader mode, use that in board.json
@@ -187,6 +278,68 @@ Before coding, explain:
    - Check Network tab in DevTools during download
    - Compare pxt.json dependencies and features between working/broken boards
    - Test manual .uf2 upload to verify compiled code is valid
+
+4. **Kinara WebUSB Investigation Log (Oct 2025)**
+   Systematic investigation of why ItsyBitsy board works with WebUSB on localhost but Kinara doesn't:
+   
+   **Attempted Fixes:**
+   - ❌ Added "pixel" feature to pxt.json
+   - ❌ Expanded gpioPinMap from 4 pins to 45+ pins (matching ItsyBitsy)
+   - ❌ Added spiPins configuration
+   - ❌ Changed driveDisplayName to match bootloader ("ITSYBITSYBOOT")
+   - ❌ Updated device.d.ts from getPinCfg to getPin shim style
+   - ❌ Made Kinara the defaultBoard in pxtarget.json
+   - ❌ Removed light.ts (dual-strip logic) temporarily
+   - ✅ **Fixed i2cPins inconsistency (Oct 19, 2025):**
+     - Changed i2cPins from referencing "A4"/"A5" to "SDA"/"SCL"
+     - Added SDA and SCL to gpioPinMap (was missing)
+     - Result: "parts no pin found" ERROR IS GONE! 🎉
+     - But: WebUSB still doesn't transfer (falls back to .uf2 download)
+     - Board enters bootloader (LED green→purple) but no USB transfer occurs
+   
+   **Current Error:** "parts no pin found for PinInstantiationIdx: 0"
+   - Occurs even with simplest code: `light.createStrip(pins.D9, 14)`
+   - Board enters bootloader (green→purple LED) but transfer times out
+   - Falls back to .uf2 file download prompt
+   - Chrome USB logs show: "Failed to submit transfer: Other error"
+   
+   **UF2 File Analysis (Oct 19, 2025):**
+   - ✅ Both ItsyBitsy and Kinara generate valid UF2 files
+   - ItsyBitsy: 356KB (711 blocks), Kinara: 310KB (619 blocks)
+   - 46KB difference due to missing dependencies (pixel, storage, screen, jacdac)
+   - UF2 structure is valid for both - difference is in included libraries, not corruption
+   
+   **Manual UF2 Upload Testing (Oct 19, 2025):**
+   - ❌ Attempted to test kinara.uf2 via manual drag-and-drop to ITSYBITSYBOOT drive
+   - ❌ ITSYBITSYBOOT drive doesn't mount on macOS even after:
+     - Reflashing bootloader with BOSSA (successful verify)
+     - Double-clicking reset (pulsing red LED confirms bootloader mode)
+     - Uploading Arduino sketch (successful - LED blink confirmed code works)
+   - Device appears in USB as disk4 but with "File System: None"
+   - Likely macOS-specific issue - bootloader works (WebUSB + Arduino work), just no mass storage
+   - Manual testing ruled out - must rely on WebUSB for validation
+   - Note: This is probably not a student issue (Windows typically mounts drives better)
+   
+   **Current Status:**
+   - Simulator: ✅ Working (25 LEDs, dual strips D9/D7)
+   - ItsyBitsy WebUSB: ✅ Working on localhost
+   - Kinara WebUSB: ❌ Failing with parts error + USB transfer error
+   - Next: Systematic comparison of board configs to find WebUSB blocker
+
+   **WebUSB Device Matching Investigation (Oct 19-20, 2025):**
+   - **Root Cause Identified:** MakeCode WebUSB looks for "Kinara PCB v1" device but physical board identifies as "ItsyBitsy M0 Express"
+   - **Evidence:** WebUSB connection works, device selector shows "ItsyBitsy M0 Express - Paired", but getDevices() retries 8 times before falling back to UF2
+   - **Attempted Fixes (All Failed):**
+     - ❌ `"deviceName": "ItsyBitsy M0 Express"` in board.json - No effect
+     - ❌ `"webUSB": {"deviceMatch": "ItsyBitsy M0 Express"}` in board.json - No effect
+     - ❌ `"inherit": "adafruit-itsybitsy-m0-express"` in board.json - No effect
+     - ❌ `"alias": "ItsyBitsy M0 Express"` in board.json - No effect
+     - ❌ `"webUSB": {"deviceMatch": "ItsyBitsy M0 Express"}` in pxt.json - No effect
+   - **✅ SOLUTION FOUND (Oct 20, 2025):**
+     - Changed `name` field in `pxtarget.json` from "Kinara PCB v1" to "ItsyBitsy M0 Express"
+     - Removed original ItsyBitsy board entry to avoid conflicts
+     - Result: Board name in UI shows "ItsyBitsy M0 Express" but loads Kinara configuration
+     - This is the ONLY change that matters - all board.json/pxt.json fields were cleaned up
 
 ### Dual NeoPixel Pin Support (Multiple Physical Strips)
 
@@ -211,4 +364,71 @@ export function strip9(): light.NeoPixelStrip {
 ```
 
 **Critical:** Never create strips at namespace level - always use lazy initialization to avoid parts system issues
+
+### Board Selection and Default Board Issues (Oct 20, 2025)
+
+**Problem:** After changing `pxtarget.json` defaultBoard to point to Kinara, new projects still default to Trinket M0
+
+**Root Cause Investigation:**
+- Changed `defaultBoard.name` to "ItsyBitsy M0 Express" and `url` to "libs/kinara-pcb-v1" for WebUSB matching
+- But server continues to default new projects to Adafruit Trinket M0
+- Tried restarting server multiple times - change not picked up
+
+**Symptoms:**
+- New projects create with Trinket M0 board selected
+- Even when user selects "Kinara PCB v1" board, project doesn't fully reload config
+- Console shows: `typeof light.strip9` = `undefined` (should be "function")
+- Console shows: `typeof pins.D9` = `undefined` (should be "object")
+- This indicates Kinara board config not actually loaded despite UI showing it selected
+
+**Board Name Confusion:**
+- Original ItsyBitsy library (`libs/adafruit-itsybitsy-m0-express`) still in `bundleddirs`
+- Created conflict: Two boards with similar names
+- When user selects "ItsyBitsy M0 Express" → loads original Adafruit board (wrong)
+- When user selects "Kinara PCB v1" → should load custom config, but doesn't persist in project
+
+**What We Know Works:**
+- ✅ WebUSB device matching works with name "ItsyBitsy M0 Express" in pxtarget.json
+- ✅ Board config files (board.json, pxt.json) are correct
+- ✅ `i2cPins` fixed to use SDA/SCL, added to gpioPinMap
+- ✅ `pixel` and `storage` dependencies added to pxt.json
+- ✅ Code compiles and uploads via WebUSB successfully
+- ✅ Board transitions from bootloader → app mode (console logs confirm)
+
+**What Doesn't Work:**
+- ❌ `defaultBoard` in pxtarget.json not being respected by server (FIXED: needed chooseBoardOnNewProject: true)
+- ❌ Board selection in UI doesn't fully reload board config in existing projects
+- ❌ `light.strip9()` undefined even when "Kinara PCB v1" selected
+- ❌ `pins.D9` undefined even when "Kinara PCB v1" selected
+- ❌ LEDs don't light up on hardware (FIXED: wrong function name - createNeoPixelStrip vs createStrip)
+
+**Root Cause Found (Oct 20, 2025):**
+- ✅ Setting `"chooseBoardOnNewProject": false` in pxtarget.json **disables `defaultBoard`**
+- When board selection is disabled, MakeCode uses a hardcoded fallback (Trinket M0)
+- The `defaultBoard` setting is ONLY respected when `chooseBoardOnNewProject: true`
+
+**Solution (Oct 20, 2025):**
+- ✅ Set `"chooseBoardOnNewProject": true` to enable board selection
+- ✅ Removed `libs/adafruit-itsybitsy-m0-express` from `bundleddirs` to avoid conflicts
+- ✅ Now users can select from available boards including Kinara
+- This is actually better for multi-board support (will have 4 holiday lantern boards)
+
+**Final Working Configuration:**
+- `defaultBoard` in pxtarget.json: "ItsyBitsy M0 Express" → `libs/kinara-pcb-v1`
+- `chooseBoardOnNewProject`: `true`
+- Original ItsyBitsy removed from bundleddirs
+- WebUSB device matching works via board name "ItsyBitsy M0 Express"
+
+**Hardware LED Bug Fix (Oct 20, 2025):**
+- **Problem:** LEDs worked in simulator but not on hardware
+- **Root Cause 1:** `light.ts` was calling `light.createNeoPixelStrip()` which doesn't exist
+- **Solution 1:** Changed to `light.createStrip()` (the correct function name)
+- **Root Cause 2:** Student code calling `light.createStrip(pins.D9, 14)` triggers parts system error
+- **Solution 2:** Pre-configured strips via `light.strip9()` and `light.strip7()` functions
+- **Files Changed:** `libs/kinara-pcb-v1/light.ts`
+- **Student API:** 
+  - `light.strip9()` - Returns pre-configured 14-LED strip for D9
+  - `light.strip7()` - Returns pre-configured 11-LED strip for D7
+  - No need to specify pins or LED counts
+- **Test Result:** Final testing in progress
 

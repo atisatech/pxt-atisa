@@ -38,11 +38,11 @@ namespace light {
             if (isSimulator()) {
                 // Create unified strip on first call (lazy initialization)
                 if (!_unified) {
-                    _unified = light.createNeoPixelStrip(pins.D9, 25);
+                    _unified = light.createStrip(pins.D9, 25);
                 }
                 _strip9 = _unified.range(0, 14);
             } else {
-                _strip9 = light.createNeoPixelStrip(pins.D9, 14);
+                _strip9 = light.createStrip(pins.D9, 14);
             }
         }
         return _strip9;
@@ -61,11 +61,11 @@ namespace light {
             if (isSimulator()) {
                 // Create unified strip on first call (lazy initialization)
                 if (!_unified) {
-                    _unified = light.createNeoPixelStrip(pins.D9, 25);
+                    _unified = light.createStrip(pins.D9, 25);
                 }
                 _strip7 = _unified.range(14, 11);
             } else {
-                _strip7 = light.createNeoPixelStrip(pins.D7, 11);
+                _strip7 = light.createStrip(pins.D7, 11);
             }
         }
         return _strip7;

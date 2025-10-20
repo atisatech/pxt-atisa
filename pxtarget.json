@@ -32,7 +32,6 @@
         "libs/feather",
         "libs/proximity",
         "libs/kinara-pcb-v1",
-        "libs/adafruit-itsybitsy-m0-express",
         "libs/adafruit-trinket-m0",
         "libs/adafruit-circuit-playground-express",
         "libs/adafruit-feather-m0-express",
@@ -62,14 +61,14 @@
         "partsAspectRatio": 0.69,
         "dynamicBoardDefinition": true,
         "defaultBoard": {
-            "name": "Adafruit ItsyBitsy M0 Express",
-            "url": "libs/adafruit-itsybitsy-m0-express",
+            "name": "ItsyBitsy M0 Express",
+            "url": "libs/kinara-pcb-v1",
             "variant": "samd21"
         },
         "boardDefinitions": [
             {
-                "name": "Adafruit ItsyBitsy M0 Express",
-                "url": "libs/adafruit-itsybitsy-m0-express",
+                "name": "ItsyBitsy M0 Express",
+                "url": "libs/kinara-pcb-v1",
                 "variant": "samd21"
             },
             {
@@ -90,11 +89,6 @@
             {
                 "name": "Adafruit Metro M0 Express",
                 "url": "libs/adafruit-metro-m0-express",
-                "variant": "samd21"
-            },
-            {
-                "name": "Kinara PCB v1",
-                "url": "libs/kinara-pcb-v1",
                 "variant": "samd21"
             }
         ],
@@ -419,7 +413,7 @@
         "homeScreenHeroGallery": "/hero-banner",
         "debugger": true,
         "print": true,
-        "chooseBoardOnNewProject": false,
+        "chooseBoardOnNewProject": true,
         "lightToc": true,
         "instructions": true,
         "docMenu": [
