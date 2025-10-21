@@ -432,3 +432,65 @@ export function strip9(): light.NeoPixelStrip {
   - No need to specify pins or LED counts
 - **Test Result:** Final testing in progress
 
+## Incremental Development from kinara-test (Oct 20, 2025)
+
+### ✅ **Step 1: Dual Strip Hardware Test (PASSED)**
+**Date:** Oct 20, 2025
+**Objective:** Verify both D9 and D7 strips can be controlled independently on hardware
+
+**Test Code:**
+```typescript
+let strip9 = light.createStrip(pins.D9, 14)
+let strip7 = light.createStrip(pins.D7, 11)
+strip9.setAll(0xff0000)  // Red
+strip7.setAll(0x0000ff)  // Blue
+```
+
+**Results:**
+- ✅ Hardware: 14 red LEDs on D9, 11 blue LEDs on D7
+- ✅ WebUSB: Device detected and code uploaded successfully
+- ✅ Code executed correctly on hardware
+- ⚠️ Parts system error: `parts no pin found for PinInstantiationIdx: 0`
+  - Error appeared once during download
+  - **Non-blocking:** Code compiled, uploaded, and ran successfully
+  - UF2 generated correctly despite error
+  - This is a simulator/analysis warning, not a runtime failure
+
+**Key Findings:**
+- `kinara-test` board configuration (Vanilla ItsyBitsy) works perfectly for Kinara hardware
+- Both NeoPixel strips (D9 and D7) are independently controllable
+- Parts system error is cosmetic and does not prevent functionality
+- Students CAN use `light.createStrip(pins.D9, 14)` directly despite the warning
+
+**Next Step:** ~~Test if `light.ts` wrapper functions~~ SKIPPED - simulator doesn't need it, adds unnecessary complexity
+
+### **Step 2: Add `light.ts` Helper Functions - SKIPPED**
+**Date:** Oct 20, 2025
+**Decision:** Skip this step to keep architecture simple
+
+**Reasons:**
+- Simulator doesn't need `light.ts` - it reads `board.json` directly
+- Hardware already works with standard API (`light.createStrip()`)
+- Parts system error is cosmetic and non-blocking
+- Avoid adding unnecessary complexity
+- Students will use standard MakeCode API (transferable skills)
+
+### ✅ **Step 3: Replace ItsyBitsy SVG with Kinara SVG (PASSED)**
+**Date:** Oct 20, 2025
+**Objective:** Show Kinara lantern artwork in simulator instead of generic ItsyBitsy board
+
+**Changes Made:**
+- Copied `libs/kinara-pcb-v1/board.svg` → `libs/kinara-test/board.svg`
+- Restarted server (no full rebuild needed)
+
+**Test Results:**
+- ✅ Simulator displays Kinara lantern SVG (not ItsyBitsy)
+- ✅ Hardware: Both strips work (14 red LEDs on D9, 11 blue on D7)
+- ✅ WebUSB: Device detected and upload successful
+- ⚠️ Parts system error persists (same as Step 1 - non-blocking)
+- ⚠️ Simulator shows only 1 generic NeoPixel (expected - will fix in Step 4)
+
+**Key Finding:** Parts system error unchanged - confirms SVG swap didn't break anything
+
+**Next Step:** Add 25 LED position entries to `board.json` for proper simulator visualization
+
