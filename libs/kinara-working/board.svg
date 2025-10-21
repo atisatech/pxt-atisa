@@ -27,19 +27,19 @@
   
   <!-- D7 NeoPixel Strip (11 LEDs) -->
   <!-- Row 3: 6 LEDs (D7_0 to D7_5) -->
-  <circle cx="100" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_0"/>
-  <circle cx="140" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_1"/>
-  <circle cx="180" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_2"/>
-  <circle cx="220" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_3"/>
-  <circle cx="260" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_4"/>
-  <circle cx="300" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_5"/>
+  <circle cx="80" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_0"/>
+  <circle cx="120" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_1"/>
+  <circle cx="160" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_2"/>
+  <circle cx="200" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_3"/>
+  <circle cx="240" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_4"/>
+  <circle cx="280" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_5"/>
+  <circle cx="320" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_6"/>
   
-  <!-- Row 4: 5 LEDs (D7_6 to D7_10) -->
-  <circle cx="120" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_6"/>
-  <circle cx="160" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_7"/>
-  <circle cx="200" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_8"/>
-  <circle cx="240" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_9"/>
-  <circle cx="280" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_10"/>
+  <!-- Row 4: 4 LEDs (D7_7 to D7_10) -->
+  <circle cx="140" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_7"/>
+  <circle cx="180" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_8"/>
+  <circle cx="220" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_9"/>
+  <circle cx="260" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_10"/>
   
   <!-- Labels -->
   <text x="60" y="80" font-family="Arial" font-size="12" font-weight="bold">D9</text>
