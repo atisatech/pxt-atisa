@@ -18,6 +18,7 @@ clients/win10/*.opendb
 clients/**/bin/**
 clients/**/obj/**
 clients/electron/projects
+menorah-with-sensor.ts
 
 videos/**
 *.user

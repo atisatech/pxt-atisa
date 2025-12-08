@@ -1,6 +1,14 @@
 namespace kinara {
     let _strip: KinaraVirtualStrip = null;
     
+    // Motion sensor state
+    let motionSensorInitialized = false;
+    let lastProximityReading = 0;
+    let debounceCounter = 0;
+    const MOTION_SENSOR_ADDR = 0x60;
+    const MOVEMENT_THRESHOLD = 15;
+    const DEBOUNCE_STEPS = 10;  // 500ms (10 × 50ms) - matches other ornament code for quick toggle behavior
+    
     /**
      * Get the Kinara 25-LED strip
      */
@@ -11,6 +19,63 @@ namespace kinara {
             _strip = new KinaraVirtualStrip();
         }
         return _strip;
+    }
+    
+    /**
+     * Initialize the motion sensor - call this once at the start
+     */
+    //% blockId=kinara_initMotionSensor block="initialize motion sensor"
+    //% weight=90
+    export function initMotionSensor() {
+        // Write to sensor configuration register to enable proximity
+        const message = pins.createBuffer(3);
+        message[0] = 0x03;  // register address
+        message[1] = 0x00;  // value low byte
+        message[2] = 0x00;  // value high byte (0x0000 = enable proximity)
+        pins.i2cWriteBuffer(MOTION_SENSOR_ADDR, message);
+        
+        // Let sensor stabilize
+        pause(100);
+        
+        // Read initial proximity value to establish baseline
+        pins.i2cWriteNumber(MOTION_SENSOR_ADDR, 0x08, NumberFormat.UInt8BE, true);
+        const data = pins.i2cReadBuffer(MOTION_SENSOR_ADDR, 2);
+        lastProximityReading = data[0] | (data[1] << 8);
+        
+        motionSensorInitialized = true;
+    }
+    
+    /**
+     * Check if motion is detected - returns true if someone moved nearby
+     */
+    //% blockId=kinara_isMotionDetected block="motion detected"
+    //% weight=85
+    export function isMotionDetected(): boolean {
+        if (!motionSensorInitialized) {
+            initMotionSensor();  // Auto-initialize if not done
+        }
+        
+        // Always read current proximity value (matches other ornament code behavior)
+        pins.i2cWriteNumber(MOTION_SENSOR_ADDR, 0x08, NumberFormat.UInt8BE, true);
+        const data = pins.i2cReadBuffer(MOTION_SENSOR_ADDR, 2);
+        const currentReading = data[0] | (data[1] << 8);
+        const movementChange = Math.abs(currentReading - lastProximityReading);
+        
+        // Update debounce counter
+        if (debounceCounter > 0) {
+            debounceCounter--;
+        }
+        
+        // Check if movement exceeds threshold (only if debounce period expired)
+        if (movementChange > MOVEMENT_THRESHOLD && debounceCounter === 0) {
+            debounceCounter = DEBOUNCE_STEPS;  // Start debounce period
+            lastProximityReading = currentReading;
+            return true;  // Motion detected!
+        }
+        
+        // Always update baseline (matches other ornament code - prevents drift)
+        lastProximityReading = currentReading;
+        return false;  // No motion detected
     }
 }
 
