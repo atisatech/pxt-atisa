@@ -4,6 +4,7 @@ yotta_modules
 yotta_targets
 pxt_modules
 built
+dist
 typings
 tmp
 temp
@@ -18,6 +19,8 @@ clients/win10/*.opendb
 clients/**/bin/**
 clients/**/obj/**
 clients/electron/projects
+menorah-with-sensor.ts
+test-motion-button.ts
 
 videos/**
 *.user

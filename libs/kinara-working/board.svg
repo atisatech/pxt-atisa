@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" height="300" width="400" viewBox="0 0 400 300">
+  <!-- Kinara board outline (scaled from Diffuser_Kinara.svg) -->
+  <g transform="translate(51, -35) scale(0.355)">
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 313.436 187.943L 313.436 198.178"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 332.866 187.943L 313.436 187.943"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 526.564 187.943L 507.134 187.943"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 526.564 198.178L 526.564 187.943"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 658.467 198.178L 526.564 198.178"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 658.467 187.943L 658.467 198.178"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 840 364.182L 840 350.046"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 829.766 364.182L 840 364.182"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 829.766 496.085L 829.766 364.182"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 840 496.085L 829.766 496.085"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 840 510.221L 840 496.085"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 755.378 647.388L 793.459 613.644"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 750.631 734.467L 748.802 732.256"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 742.745 740.99L 750.631 734.467"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 806.798 818.43L 742.745 740.99"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 814.685 811.907L 806.798 818.43"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 816.513 814.118L 814.685 811.907"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 674.434 841.89L 829.145 841.89"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 674.434 831.656L 674.434 841.89"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 542.531 831.656L 674.434 831.656"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 542.531 841.89L 542.531 831.656"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 297.469 841.89L 542.531 841.89"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 297.469 831.656L 297.469 841.89"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 165.566 831.656L 297.469 831.656"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 165.566 841.89L 165.566 831.656"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 10.8554 841.89L 165.566 841.89"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 25.3155 811.907L 23.4868 814.118"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 33.2016 818.43L 25.3155 811.907"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 97.2549 740.99L 33.2016 818.43"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 89.3688 734.467L 97.2549 740.99"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 91.1976 732.256L 89.3688 734.467"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 46.5411 613.644L 84.6222 647.388"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 0 496.085L 0 510.221"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 10.2342 496.085L 0 496.085"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 10.2342 364.182L 10.2342 496.085"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 0 364.182L 10.2342 364.182"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 0 350.046L 0 364.182"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 181.533 187.943L 162.103 187.943"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 181.533 198.178L 181.533 187.943"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 313.436 198.178L 181.533 198.178"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 445.389 793.711L 445.389 755.396"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 445.389 755.396L 394.512 755.396"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 394.512 755.396L 394.512 793.711"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 394.512 793.711L 445.389 793.711"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 677.897 187.943L 658.467 187.943"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 332.866 187.943C 352.442 187.943 369.131 175.499 375.449 158.096"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 420 126.855C 419.999 126.855 419.997 126.855 419.996 126.855C 399.509 126.855 382.043 139.878 375.431 158.091"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 793.443 613.63C 821.995 588.309 840 551.353 840 510.221"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 755.385 647.394C 742.731 658.616 734.752 674.994 734.752 693.223C 734.752 708.049 740.03 721.651 748.808 732.25"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 829.152 841.889C 827.449 831.446 822.974 821.93 816.507 814.123"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 23.4923 814.123C 17.0261 821.931 12.5509 831.446 10.8479 841.888"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 91.1918 732.25C 99.9702 721.651 105.248 708.049 105.248 693.223C 105.248 674.994 97.2689 658.616 84.6149 647.394"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M -2.84217e-14 510.221C -2.84217e-14 551.353 18.0048 588.309 46.5574 613.63"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 162.103 187.943C 72.627 187.943 3.20568e-10 260.57 3.20568e-10 350.046"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 464.551 158.096C 470.869 175.499 487.558 187.943 507.134 187.943"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 464.569 158.091C 457.957 139.878 440.491 126.855 420.004 126.855C 420.003 126.855 420.001 126.855 420 126.855"/>
+    <path style="stroke:#000000; stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; fill:none" d="M 840 350.046C 840 260.57 767.373 187.943 677.897 187.943"/>
+  </g>
+  
+  
+  <!-- D9 NeoPixel Strip (14 LEDs) -->
+  <!-- Row 1: 7 LEDs (D9_0 to D9_6) -->
+  <circle cx="80" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_0"/>
+  <circle cx="120" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_1"/>
+  <circle cx="160" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_2"/>
+  <circle cx="200" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_3"/>
+  <circle cx="240" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_4"/>
+  <circle cx="280" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_5"/>
+  <circle cx="320" cy="60" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_6"/>
+  
+  <!-- Row 2: 7 LEDs (D9_7 to D9_13) -->
+  <circle cx="80" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_7"/>
+  <circle cx="120" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_8"/>
+  <circle cx="160" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_9"/>
+  <circle cx="200" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_10"/>
+  <circle cx="240" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_11"/>
+  <circle cx="280" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_12"/>
+  <circle cx="320" cy="100" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D9_13"/>
+  
+  <!-- D7 NeoPixel Strip (11 LEDs) -->
+  <!-- Row 3: 6 LEDs (D7_0 to D7_5) -->
+  <circle cx="80" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_0"/>
+  <circle cx="120" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_1"/>
+  <circle cx="160" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_2"/>
+  <circle cx="200" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_3"/>
+  <circle cx="240" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_4"/>
+  <circle cx="280" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_5"/>
+  <circle cx="320" cy="140" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_6"/>
+  
+  <!-- Row 4: 4 LEDs (D7_7 to D7_10) -->
+  <circle cx="140" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_7"/>
+  <circle cx="180" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_8"/>
+  <circle cx="220" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_9"/>
+  <circle cx="260" cy="180" r="6" fill="#333" stroke="#000" stroke-width="0.5" id="NEOPIXEL_D7_10"/>
+  
+  <!-- Labels -->
+  <text x="60" y="80" font-family="Arial" font-size="12" font-weight="bold">D9</text>
+  <text x="60" y="160" font-family="Arial" font-size="12" font-weight="bold">D7</text>
+</svg>
