@@ -1,1 +1,0 @@
-self.MonacoEnvironment={baseUrl:"/"},importScripts("/vs/base/worker/workerMain.js");
