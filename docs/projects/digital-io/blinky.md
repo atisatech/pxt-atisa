@@ -4,7 +4,7 @@
 
 Turn on and off the light pin to create a blinking effect.
 
-![A breadboard with a blinking LED](/static/projects/digital-io/blinky/gallery.gif)
+![A breadboard with a blinking LED](/pxt-atisa/static/projects/digital-io/blinky/gallery.gif)
 
 ```template
 forever(function() {
@@ -26,7 +26,7 @@ forever(function() {
 
 Take a peek at the simulator and make sure the LED is turned off.
 
-![A breadboard with a LED turned off](/static/projects/digital-io/blinky/off.png)
+![A breadboard with a LED turned off](/pxt-atisa/static/projects/digital-io/blinky/off.png)
 
 ## Step 3 @fullscreen
 
@@ -52,7 +52,7 @@ If you have a @boardname@, press ``|Download|`` and follow the instruction to ge
 
 Click on the **wrench** icon under the simulator to get detailed breadboarding instructions.
 
-![The wrench button](/static/projects/digital-io/blinky/wrench.png)
+![The wrench button](/pxt-atisa/static/projects/digital-io/blinky/wrench.png)
 
 ```config
 feature=uf2

@@ -7,7 +7,7 @@
 * name: Meow Meow
 * url: /boards/electroniccats-meow-meow
 * cardType: template
-* imageUrl: /static/libs/electroniccats-meow-meow.jpg
+* imageUrl: /pxt-atisa/static/libs/electroniccats-meow-meow.jpg
 
 ### ~
 

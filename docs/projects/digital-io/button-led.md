@@ -4,7 +4,7 @@
 
 Use a button on a digital pin to control an LED.
 
-![A breadboard with a button that turns on an LED](/static/projects/digital-io/button-led/gallery.gif)
+![A breadboard with a button that turns on an LED](/pxt-atisa/static/projects/digital-io/button-led/gallery.gif)
 
 ## Step 1 @fullscreen
 
@@ -30,7 +30,7 @@ input.buttonD0.onEvent(ButtonEvent.Click, function () {
 Look at the simulator and notice that a breadboard and a button has been added to the board.
 Try pressing on the button and the LED should light up.
 
-![A simulated boardboard turning on a LED](/static/projects/digital-io/button-led/led-on.gif)
+![A simulated boardboard turning on a LED](/pxt-atisa/static/projects/digital-io/button-led/led-on.gif)
 
 ## Step 4 @fullscreen
 
@@ -54,7 +54,7 @@ and follow the instructions to get it on your board.
 
 Click on the **wrench** icon under the simulator to print detailed breadboard wiring instructions.
 
-![Wrench icon](/static/projects/digital-io/button-led/wrench.png)
+![Wrench icon](/pxt-atisa/static/projects/digital-io/button-led/wrench.png)
 
 ```config
 feature=uf2

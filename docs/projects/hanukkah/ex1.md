@@ -5,7 +5,7 @@
 This serves as an example for tutorials. Edit this file later with curriculum accurate lessons.
 Click [this link](https://makecode.com/writing-docs/tutorials) for tutorials documentation.
 
-![A breadboard with a blinking LED](/static/projects/digital-io/blinky/gallery.gif)
+![A breadboard with a blinking LED](/pxt-atisa/static/projects/digital-io/blinky/gallery.gif)
 
 ## Example Step 2 @fullscreen
 

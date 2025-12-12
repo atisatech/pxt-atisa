@@ -6,42 +6,42 @@
 
 * name: Robotics Masters Robo HAT MM1 M4
 * url: /boards/robotics-masters-robohatmm1-m4
-* imageUrl: /static/libs/robotics-masters-robohatmm1-m4.jpg
+* imageUrl: /pxt-atisa/static/libs/robotics-masters-robohatmm1-m4.jpg
 
 ---
 
 * name: Espressif ESP32 DevKit-C
 * url: /boards/espressif-esp32-devkit-c
 * cardType: template
-* imageUrl: /static/libs/espressif-esp32-devkit-c.jpg
+* imageUrl: /pxt-atisa/static/libs/espressif-esp32-devkit-c.jpg
 
 ---
 
 * name: Raspberry Pi Pico RP2040
 * url: /boards/rpi-pico
 * cardType: template
-* imageUrl: /static/libs/rpi-pico.jpg
+* imageUrl: /pxt-atisa/static/libs/rpi-pico.jpg
 
 ---
 
 * name: RedBear BLE NANO 2
 * url: /boards/redbear-ble-nano
 * cardType: template
-* imageUrl: /static/libs/redbear-ble-nano.jpg
+* imageUrl: /pxt-atisa/static/libs/redbear-ble-nano.jpg
 
 ---
 
 * name: StichKit
 * url: /boards/stitchkit
 * cardType: template
-* imageUrl: /static/libs/stitchkit.jpg
+* imageUrl: /pxt-atisa/static/libs/stitchkit.jpg
 
 ---
 
 * name: Bluebird
 * url: /boards/teknikio-bluebird
 * cardType: template
-* imageUrl: /static/libs/teknikio-bluebird.jpg
+* imageUrl: /pxt-atisa/static/libs/teknikio-bluebird.jpg
 
 ---
 
@@ -66,6 +66,6 @@
         "name": "StichKit",
         "url": "/boards/stitchkit",
         "cardType": "template",
-        "imageUrl": "/static/libs/stitchkit.jpg"  
+        "imageUrl": "/pxt-atisa/static/libs/stitchkit.jpg"  
     }
 ]

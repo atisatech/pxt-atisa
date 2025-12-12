@@ -4,7 +4,7 @@
 
 Blink an LED where the tempo is controlled by a light sensor.
 
-![An LED blinking based on a light sensor](/static/projects/analog-io/blink-to-light/gallery.gif)
+![An LED blinking based on a light sensor](/pxt-atisa/static/projects/analog-io/blink-to-light/gallery.gif)
 
 ## Step 1 @fullscreen
 

@@ -4,7 +4,7 @@
 
 Attach a switch on a digital pin to turn a LED on or off.
 
-![A simulated breadboard with a switch that controls an LED](/static/projects/digital-io/switch-led/gallery.gif)
+![A simulated breadboard with a switch that controls an LED](/pxt-atisa/static/projects/digital-io/switch-led/gallery.gif)
 
 ```template
 forever(function () {
