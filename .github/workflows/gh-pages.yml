@@ -90,6 +90,9 @@ jobs:
             find . -name "*.md" -not -path "./docs/*" -delete || true
           fi
           
+          # Ensure .nojekyll exists to bypass Jekyll processing for static assets
+          touch .nojekyll
+          
           # Commit and push
           git add -A
           git commit -m "Deploy to GitHub Pages [skip ci]" || exit 0
