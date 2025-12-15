@@ -66,12 +66,14 @@
             {
                 "name": "ItsyBitsy M0 Express",
                 "url": "libs/kwanzaa-kinara-lantern",
-                "variant": "samd21"
+                "variant": "samd21",
+                "cardImage": "/pxt-atisa/static/libs/kwanzaa-kinara-lantern.jpg"
             },
             {
                 "name": "Menorah PCB v1",
                 "url": "libs/chanukah-menorah-lantern",
-                "variant": "samd21"
+                "variant": "samd21",
+                "cardImage": "/pxt-atisa/static/libs/chanukah-menorah-lantern.jpg"
             }
         ],
         "messageSimulators": {
