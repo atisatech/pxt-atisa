@@ -31,8 +31,8 @@
 
         "libs/feather",
         "libs/proximity",
-        "libs/kinara-working",
-        "libs/menorah-working"
+        "libs/kwanzaa-kinara-lantern",
+        "libs/chanukah-menorah-lantern"
     ],
     "serial": {
         "useHF2": true,
@@ -59,18 +59,18 @@
         "dynamicBoardDefinition": true,
         "defaultBoard": {
             "name": "ItsyBitsy M0 Express",
-            "url": "libs/kinara-working",
+            "url": "libs/kwanzaa-kinara-lantern",
             "variant": "samd21"
         },
         "boardDefinitions": [
             {
                 "name": "ItsyBitsy M0 Express",
-                "url": "libs/kinara-working",
+                "url": "libs/kwanzaa-kinara-lantern",
                 "variant": "samd21"
             },
             {
                 "name": "Menorah PCB v1",
-                "url": "libs/menorah-working",
+                "url": "libs/chanukah-menorah-lantern",
                 "variant": "samd21"
             }
         ],
