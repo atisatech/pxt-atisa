@@ -409,7 +409,14 @@
         "feedbackUrl": "https://forum.makecode.com/",
         "betaUrl": "https://github.com/microsoft/pxt-maker",
         "boardName": "board",
-        "homeScreenHero": "/pxt-atisa/docs/static/herogallery/hero-image.jpg",
+        "homeScreenHero": {
+            "imageUrl": "/pxt-atisa/docs/static/herogallery/hero-image.jpg",
+            "name": "åtisa Holiday Lanterns",
+            "description": "Create beautiful holiday lanterns with code",
+            "url": "https://docs.google.com/document/d/1iCr8v9KLndBhodVROdTudgTfp1PgoLpyfqgekhZW-j4/edit?usp=sharing",
+            "cardType": "forumUrl",
+            "buttonLabel": "Start Setup Instructions"
+        },
         "debugger": true,
         "print": true,
         "chooseBoardOnNewProject": true,
