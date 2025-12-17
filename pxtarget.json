@@ -477,7 +477,7 @@
         "showProjectSettings": true,
         "selectLanguage": false,
         "githubEditor": true,
-        "tutorialBlocksDiff": true,
+        "tutorialBlocksDiff": false,
         "tutorialExplicitHints": true,
         "chooseLanguageRestrictionOnNewProject": true,
         "openProjectNewTab": true,

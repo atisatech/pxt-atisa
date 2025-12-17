@@ -1,3 +1,4 @@
+//% color="#FFD700" weight=100 icon="\uf1ad"
 namespace menorah {
     let _strip: MenorahVirtualStrip = null;
     
