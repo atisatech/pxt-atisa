@@ -8,6 +8,15 @@ In this tutorial, you'll learn how to make the menorah light up with beautiful c
 
 ![A menorah with lights](/pxt-atisa/static/projects/digital-io/blinky/gallery.png)
 
+```package
+chanukah-menorah-lantern
+```
+
+```config
+feature=uf2
+feature=light
+```
+
 ## Step 1 @fullscreen
 
 First, we need to get the menorah strip. This is like getting the lights ready to use.
@@ -76,8 +85,3 @@ for (let i = 1; i <= 9; i++) {
 Look at the simulator! Can you see the menorah lighting up? The shammash should be glowing in the middle, the leftmost candle should be lit, and the base should be glowing blue.
 
 If you have a menorah board, click ``|Download|`` to put your code on the board and see the real lights!
-
-```config
-feature=uf2
-feature=light
-```

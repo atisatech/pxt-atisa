@@ -49,6 +49,11 @@
     },
     "scripts": {
         "dev": "set -e &&(cd ../pxt && npm run build) && ./link.sh && pxt serve",
+        "build-pxt": "cd ../pxt && npm run build",
+        "build-pxt-watch": "cd ../pxt && npm run watch",
+        "link": "./link.sh",
+        "serve": "pxt serve",
+        "dev-full": "npm run build-pxt && npm run link && npm run serve",
         "test": "node node_modules/pxt-core/built/pxt.js travis",
         "svgo": "glob-exec --foreach \"**/boardhd.svg\" -- \"svgo --config=svgo.yml {{file}} -o {{file.dir}}/board.svg \""
     }
