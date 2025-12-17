@@ -1,6 +1,6 @@
 //% color="#FFD700" weight=100 icon="\uf1ad"
 namespace menorah {
-    let _strip: MenorahVirtualStrip = null;
+    let _board: MenorahBoard = null;
     
     // Motion sensor state
     let motionSensorInitialized = false;
@@ -12,15 +12,15 @@ namespace menorah {
     const DEBOUNCE_STEPS = 10;  // 500ms (10 × 50ms) - matches other ornament code for quick toggle behavior
     
     /**
-     * Get the Menorah 27-LED strip
+     * Get the Menorah board
      */
-    //% blockId=menorah_strip block="menorah strip"
+    //% blockId=menorah_strip block="menorah board"
     //% weight=100
-    export function strip(): MenorahVirtualStrip {
-        if (!_strip) {
-            _strip = new MenorahVirtualStrip();
+    export function strip(): MenorahBoard {
+        if (!_board) {
+            _board = new MenorahBoard();
         }
-        return _strip;
+        return _board;
     }
     
     /**
@@ -108,7 +108,7 @@ namespace menorah {
     }
 }
 
-class MenorahVirtualStrip {
+class MenorahBoard {
     private stripD9: light.NeoPixelStrip;
     private stripD7: light.NeoPixelStrip;
     private useVirtualStrip: boolean;
