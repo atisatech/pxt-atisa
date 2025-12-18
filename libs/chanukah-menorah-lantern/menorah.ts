@@ -1,6 +1,10 @@
 //% color="#FFD700" weight=100 icon="\uf1ad"
 namespace menorah {
-    let _strip: MenorahVirtualStrip = null;
+    let _board: MenorahBoard = null;
+    function getBoard(): MenorahBoard {
+        if (!_board) _board = new MenorahBoard();
+        return _board;
+    }
     
     // Motion sensor state
     let motionSensorInitialized = false;
@@ -12,15 +16,12 @@ namespace menorah {
     const DEBOUNCE_STEPS = 10;  // 500ms (10 × 50ms) - matches other ornament code for quick toggle behavior
     
     /**
-     * Get the Menorah 27-LED strip
+     * Get the Menorah board
      */
-    //% blockId=menorah_strip block="menorah strip"
+    //% blockId=menorah_strip block="menorah board"
     //% weight=100
-    export function strip(): MenorahVirtualStrip {
-        if (!_strip) {
-            _strip = new MenorahVirtualStrip();
-        }
-        return _strip;
+    export function strip(): MenorahBoard {
+        return getBoard();
     }
     
     /**
@@ -106,9 +107,106 @@ namespace menorah {
         lastProximityReading = currentReading;
         return false;  // No motion detected
     }
+
+    /**
+     * Set color of pixel at index (0-26)
+     */
+    //% blockId=menorah_setPixelColor block="set pixel color at %index to %color"
+    //% index.min=0 index.max=26
+    //% color.shadow="colorNumberPicker"
+    export function setPixelColor(index: number, color: number) {
+        getBoard().setPixelColor(index, color);
+    }
+    
+    /**
+     * Set color of a Menorah flame (1-9, left to right)
+     * Flame 1 = leftmost, Flame 9 = rightmost
+     */
+    //% blockId=menorah_setFlame block="set Menorah flame %flameNumber to %color"
+    //% flameNumber.min=1 flameNumber.max=9
+    //% color.shadow="colorNumberPicker"
+    export function setFlame(flameNumber: number, color: number) {
+        getBoard().setFlame(flameNumber, color);
+    }
+    
+    /**
+     * Set color of a Menorah candle (1-9, left to right)
+     * Candle 1 = leftmost, Candle 5 = shammash (middle), Candle 9 = rightmost
+     */
+    //% blockId=menorah_setCandle block="set Menorah candle %candleNumber to %color"
+    //% candleNumber.min=1 candleNumber.max=9
+    //% color.shadow="colorNumberPicker"
+    export function setCandle(candleNumber: number, color: number) {
+        getBoard().setCandle(candleNumber, color);
+    }
+    
+    /**
+     * Set color of a menorah base light (1-9, row by row, left to right)
+     * Base Light 1 = top left, Base Light 9 = bottom center
+     */
+    //% blockId=menorah_setBaseLight block="set Menorah base light %baseNumber to %color"
+    //% weight=80
+    //% baseNumber.min=1 baseNumber.max=9
+    //% color.shadow="colorNumberPicker"
+    export function setMenorahBaseLight(baseNumber: number, color: number) {
+        getBoard().setMenorahBaseLight(baseNumber, color);
+    }
+    
+    /**
+     * Set all Menorah flames to the same color
+     */
+    //% blockId=menorah_setAllFlames block="set all Menorah flames to %color"
+    //% color.shadow="colorNumberPicker"
+    export function setAllFlames(color: number) {
+        getBoard().setAllFlames(color);
+    }
+    
+    /**
+     * Set all Menorah candles to the same color
+     */
+    //% blockId=menorah_setAllCandles block="set all Menorah candles to %color"
+    //% color.shadow="colorNumberPicker"
+    export function setAllCandles(color: number) {
+        getBoard().setAllCandles(color);
+    }
+    
+    /**
+     * Set all menorah base lights to the same color
+     */
+    //% blockId=menorah_setAllMenorahBaseLights block="set all Menorah base lights to %color"
+    //% color.shadow="colorNumberPicker"
+    export function setAllMenorahBaseLights(color: number) {
+        getBoard().setAllMenorahBaseLights(color);
+    }
+    
+    /**
+     * Set all pixels to same color
+     */
+    //% blockId=menorah_setAll block="set all %color"
+    //% color.shadow="colorNumberPicker"
+    export function setAll(color: number) {
+        getBoard().setAll(color);
+    }
+    
+    /**
+     * Set brightness for all LEDs (0-255)
+     */
+    //% blockId=menorah_setBrightness block="set brightness %brightness"
+    //% brightness.min=0 brightness.max=255
+    export function setBrightness(brightness: number) {
+        getBoard().setBrightness(brightness);
+    }
+    
+    /**
+     * Update the LEDs
+     */
+    //% blockId=menorah_show block="show lights"
+    export function show() {
+        getBoard().show();
+    }
 }
 
-class MenorahVirtualStrip {
+class MenorahBoard {
     private stripD9: light.NeoPixelStrip;
     private stripD7: light.NeoPixelStrip;
     private useVirtualStrip: boolean;
@@ -129,11 +227,8 @@ class MenorahVirtualStrip {
     }
     
     /**
-     * Set color of pixel at index (0-26)
+     * Set color of pixel at index (0-26) - INTERNAL USE ONLY
      */
-    //% blockId=menorah_setPixelColor block="%strip|set pixel color at %index|to %color"
-    //% index.min=0 index.max=26
-    //% color.shadow="colorNumberPicker"
     setPixelColor(index: number, color: number) {
         if (this.useVirtualStrip) {
             // Simulator: single virtual strip
@@ -152,12 +247,9 @@ class MenorahVirtualStrip {
     }
     
     /**
-     * Set color of a flame (1-9, left to right)
+     * Set color of a flame (1-9, left to right) - INTERNAL USE ONLY
      * Flame 1 = leftmost, Flame 9 = rightmost
      */
-    //% blockId=menorah_setFlame block="%strip|set flame %flameNumber|to %color"
-    //% flameNumber.min=1 flameNumber.max=9
-    //% color.shadow="colorNumberPicker"
     setFlame(flameNumber: number, color: number) {
         if (flameNumber < 1 || flameNumber > 9) return; // Validate input
         
@@ -176,12 +268,9 @@ class MenorahVirtualStrip {
     }
     
     /**
-     * Set color of a candle (1-9, left to right)
+     * Set color of a candle (1-9, left to right) - INTERNAL USE ONLY
      * Candle 1 = leftmost, Candle 5 = shammash (middle), Candle 9 = rightmost
      */
-    //% blockId=menorah_setCandle block="%strip|set candle %candleNumber|to %color"
-    //% candleNumber.min=1 candleNumber.max=9
-    //% color.shadow="colorNumberPicker"
     setCandle(candleNumber: number, color: number) {
         // Logical mapping: Candle 1 (leftmost) → Physical index 9, Candle 9 (rightmost) → Physical index 17
         // Formula: physicalIndex = 8 + candleNumber
@@ -191,12 +280,9 @@ class MenorahVirtualStrip {
     }
     
     /**
-     * Set color of a menorah base light (1-9, row by row, left to right)
+     * Set color of a menorah base light (1-9, row by row, left to right) - INTERNAL USE ONLY
      * Base Light 1 = top left, Base Light 9 = bottom center
      */
-    //% blockId=menorah_setMenorahBaseLight block="%strip|set menorah base light %baseNumber|to %color"
-    //% baseNumber.min=1 baseNumber.max=9
-    //% color.shadow="colorNumberPicker"
     setMenorahBaseLight(baseNumber: number, color: number) {
         // Logical mapping to physical indices 18-26
         // Lookup array: [18, 19, 20, 21, 22, 23, 24, 25, 26]
@@ -210,10 +296,8 @@ class MenorahVirtualStrip {
     }
     
     /**
-     * Set all flames to the same color
+     * Set all flames to the same color - INTERNAL USE ONLY
      */
-    //% blockId=menorah_setAllFlames block="%strip|set all flames to %color"
-    //% color.shadow="colorNumberPicker"
     setAllFlames(color: number) {
         for (let i = 1; i <= 9; i++) {
             this.setFlame(i, color);
@@ -221,10 +305,8 @@ class MenorahVirtualStrip {
     }
     
     /**
-     * Set all candles to the same color
+     * Set all candles to the same color - INTERNAL USE ONLY
      */
-    //% blockId=menorah_setAllCandles block="%strip|set all candles to %color"
-    //% color.shadow="colorNumberPicker"
     setAllCandles(color: number) {
         for (let i = 1; i <= 9; i++) {
             this.setCandle(i, color);
@@ -232,10 +314,8 @@ class MenorahVirtualStrip {
     }
     
     /**
-     * Set all menorah base lights to the same color
+     * Set all menorah base lights to the same color - INTERNAL USE ONLY
      */
-    //% blockId=menorah_setAllMenorahBaseLights block="%strip|set all menorah base lights to %color"
-    //% color.shadow="colorNumberPicker"
     setAllMenorahBaseLights(color: number) {
         for (let i = 1; i <= 9; i++) {
             this.setMenorahBaseLight(i, color);
@@ -243,10 +323,8 @@ class MenorahVirtualStrip {
     }
     
     /**
-     * Set all pixels to same color
+     * Set all pixels to same color - INTERNAL USE ONLY
      */
-    //% blockId=menorah_setAll block="%strip|set all %color"
-    //% color.shadow="colorNumberPicker"
     setAll(color: number) {
         if (this.useVirtualStrip) {
             // Simulator: single virtual strip
@@ -260,10 +338,8 @@ class MenorahVirtualStrip {
     }
     
     /**
-     * Set brightness for all LEDs (0-255)
+     * Set brightness for all LEDs (0-255) - INTERNAL USE ONLY
      */
-    //% blockId=menorah_setBrightness block="%strip|set brightness %brightness"
-    //% brightness.min=0 brightness.max=255
     setBrightness(brightness: number) {
         this.stripD9.setBrightness(brightness);
         if (this.stripD7) {
@@ -272,9 +348,8 @@ class MenorahVirtualStrip {
     }
     
     /**
-     * Update the LED strip
+     * Update the LED strip - INTERNAL USE ONLY
      */
-    //% blockId=menorah_show block="%strip|show"
     show() {
         this.stripD9.show();
         if (this.stripD7) { // Only show D7 if it exists (i.e., not in simulator)
