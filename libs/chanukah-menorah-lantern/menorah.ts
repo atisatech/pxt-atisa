@@ -1,4 +1,4 @@
-//% color="#FFD700" weight=100 icon="\uf1ad"
+//% color="#FFBB00" weight=100 icon="\uf1ad"
 namespace menorah {
     let _board: MenorahBoard = null;
     function getBoard(): MenorahBoard {
@@ -195,6 +195,51 @@ namespace menorah {
     //% brightness.min=0 brightness.max=255
     export function setBrightness(brightness: number) {
         getBoard().setBrightness(brightness);
+    }
+    
+    /**
+     * Get list of all flame numbers (1-9)
+     */
+    //% blockId=menorah_allFlameNumbers block="all flame numbers"
+    //% weight=70
+    export function allFlameNumbers(): number[] {
+        return [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    }
+    
+    /**
+     * Get list of flame numbers except shammash (1-4, 6-9)
+     */
+    //% blockId=menorah_flameNumbersExceptShammash block="flame numbers except shammash"
+    //% weight=69
+    export function flameNumbersExceptShammash(): number[] {
+        return [1, 2, 3, 4, 6, 7, 8, 9];
+    }
+    
+    /**
+     * Get list of all candle numbers (1-9)
+     */
+    //% blockId=menorah_allCandleNumbers block="all candle numbers"
+    //% weight=68
+    export function allCandleNumbers(): number[] {
+        return [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    }
+    
+    /**
+     * Get list of candle numbers except shammash (1-4, 6-9)
+     */
+    //% blockId=menorah_candleNumbersExceptShammash block="candle numbers except shammash"
+    //% weight=67
+    export function candleNumbersExceptShammash(): number[] {
+        return [1, 2, 3, 4, 6, 7, 8, 9];
+    }
+    
+    /**
+     * Get list of all base light numbers (1-9)
+     */
+    //% blockId=menorah_allBaseLightNumbers block="all base light numbers"
+    //% weight=66
+    export function allBaseLightNumbers(): number[] {
+        return [1, 2, 3, 4, 5, 6, 7, 8, 9];
     }
     
     /**
