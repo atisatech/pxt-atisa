@@ -81,6 +81,12 @@
                 "url": "libs/philippine-parol-lantern",
                 "variant": "samd21",
                 "cardImage": "/pxt-atisa/docs/static/libs/philippine-parol-lantern.jpg"
+            },
+            {
+                "name": "Holiday Ornament PCB v1",
+                "url": "libs/holiday-ornament-lantern",
+                "variant": "samd21",
+                "cardImage": "/pxt-atisa/docs/static/libs/holiday-ornament-lantern.jpg"
             }
         ],
         "messageSimulators": {
