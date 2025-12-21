@@ -7,32 +7,152 @@
     "height": 300,
     "pinDist": 15,
     "pinBlocks": [],
-                "leds": [
-                  {"x": 110, "y": 45, "color": "neopixel", "label": "NEOPIXEL_0"},
-                  {"x": 132, "y": 45, "color": "neopixel", "label": "NEOPIXEL_1"},
-                  {"x": 154, "y": 45, "color": "neopixel", "label": "NEOPIXEL_2"},
-                  {"x": 176, "y": 45, "color": "neopixel", "label": "NEOPIXEL_3"},
-                  {"x": 198, "y": 45, "color": "neopixel", "label": "NEOPIXEL_4"},
-                  {"x": 220, "y": 45, "color": "neopixel", "label": "NEOPIXEL_5"},
-                  {"x": 242, "y": 45, "color": "neopixel", "label": "NEOPIXEL_6"},
-                  {"x": 264, "y": 45, "color": "neopixel", "label": "NEOPIXEL_7"},
-                  {"x": 286, "y": 45, "color": "neopixel", "label": "NEOPIXEL_8"},
-                  {"x": 110, "y": 75, "color": "neopixel", "label": "NEOPIXEL_9"},
-                  {"x": 132, "y": 75, "color": "neopixel", "label": "NEOPIXEL_10"},
-                  {"x": 154, "y": 75, "color": "neopixel", "label": "NEOPIXEL_11"},
-                  {"x": 176, "y": 75, "color": "neopixel", "label": "NEOPIXEL_12"},
-                  {"x": 198, "y": 75, "color": "neopixel", "label": "NEOPIXEL_13"},
-                  {"x": 130, "y": 120, "color": "neopixel", "label": "NEOPIXEL_14"},
-                  {"x": 200, "y": 120, "color": "neopixel", "label": "NEOPIXEL_15"},
-                  {"x": 270, "y": 120, "color": "neopixel", "label": "NEOPIXEL_16"},
-                  {"x": 140, "y": 165, "color": "neopixel", "label": "NEOPIXEL_17"},
-                  {"x": 175, "y": 165, "color": "neopixel", "label": "NEOPIXEL_18"},
-                  {"x": 200, "y": 165, "color": "neopixel", "label": "NEOPIXEL_19"},
-                  {"x": 225, "y": 165, "color": "neopixel", "label": "NEOPIXEL_20"},
-                  {"x": 260, "y": 165, "color": "neopixel", "label": "NEOPIXEL_21"},
-                  {"x": 200, "y": 200, "color": "neopixel", "label": "NEOPIXEL_22"},
-                  {"x": 200, "y": 230, "color": "neopixel", "label": "NEOPIXEL_23"}
-                ],
+    "leds": [
+      {
+        "x": 272.8,
+        "y": 52.0,
+        "color": "neopixel",
+        "label": "NEOPIXEL_0"
+      },
+      {
+        "x": 227.8,
+        "y": 19.4,
+        "color": "neopixel",
+        "label": "NEOPIXEL_1"
+      },
+      {
+        "x": 172.2,
+        "y": 19.4,
+        "color": "neopixel",
+        "label": "NEOPIXEL_2"
+      },
+      {
+        "x": 127.2,
+        "y": 52.1,
+        "color": "neopixel",
+        "label": "NEOPIXEL_3"
+      },
+      {
+        "x": 110.0,
+        "y": 105.0,
+        "color": "neopixel",
+        "label": "NEOPIXEL_4"
+      },
+      {
+        "x": 127.2,
+        "y": 158.0,
+        "color": "neopixel",
+        "label": "NEOPIXEL_5"
+      },
+      {
+        "x": 150.0,
+        "y": 250.0,
+        "color": "neopixel",
+        "label": "NEOPIXEL_6"
+      },
+      {
+        "x": 150.0,
+        "y": 270.0,
+        "color": "neopixel",
+        "label": "NEOPIXEL_7"
+      },
+      {
+        "x": 172.2,
+        "y": 190.6,
+        "color": "neopixel",
+        "label": "NEOPIXEL_8"
+      },
+      {
+        "x": 227.8,
+        "y": 190.6,
+        "color": "neopixel",
+        "label": "NEOPIXEL_9"
+      },
+      {
+        "x": 250.0,
+        "y": 250.0,
+        "color": "neopixel",
+        "label": "NEOPIXEL_10"
+      },
+      {
+        "x": 250.0,
+        "y": 270.0,
+        "color": "neopixel",
+        "label": "NEOPIXEL_11"
+      },
+      {
+        "x": 272.8,
+        "y": 157.9,
+        "color": "neopixel",
+        "label": "NEOPIXEL_12"
+      },
+      {
+        "x": 290.0,
+        "y": 105.0,
+        "color": "neopixel",
+        "label": "NEOPIXEL_13"
+      },
+      {
+        "x": 235.2,
+        "y": 56.4,
+        "color": "neopixel",
+        "label": "NEOPIXEL_14"
+      },
+      {
+        "x": 164.8,
+        "y": 56.4,
+        "color": "neopixel",
+        "label": "NEOPIXEL_15"
+      },
+      {
+        "x": 143.0,
+        "y": 123.6,
+        "color": "neopixel",
+        "label": "NEOPIXEL_16"
+      },
+      {
+        "x": 200.0,
+        "y": 165.0,
+        "color": "neopixel",
+        "label": "NEOPIXEL_17"
+      },
+      {
+        "x": 257.1,
+        "y": 123.4,
+        "color": "neopixel",
+        "label": "NEOPIXEL_18"
+      },
+      {
+        "x": 217.6,
+        "y": 80.7,
+        "color": "neopixel",
+        "label": "NEOPIXEL_19"
+      },
+      {
+        "x": 182.4,
+        "y": 80.7,
+        "color": "neopixel",
+        "label": "NEOPIXEL_20"
+      },
+      {
+        "x": 171.5,
+        "y": 114.3,
+        "color": "neopixel",
+        "label": "NEOPIXEL_21"
+      },
+      {
+        "x": 200.0,
+        "y": 135.0,
+        "color": "neopixel",
+        "label": "NEOPIXEL_22"
+      },
+      {
+        "x": 228.5,
+        "y": 114.2,
+        "color": "neopixel",
+        "label": "NEOPIXEL_23"
+      }
+    ],
     "buttons": [
       {
         "x": 187.5,
@@ -65,37 +185,43 @@
     "A3": "A3",
     "A4": "A4",
     "A5": "A5",
-              "NEOPIXEL_0": "NEOPIXEL_0",
-              "NEOPIXEL_1": "NEOPIXEL_1",
-              "NEOPIXEL_2": "NEOPIXEL_2",
-              "NEOPIXEL_3": "NEOPIXEL_3",
-              "NEOPIXEL_4": "NEOPIXEL_4",
-              "NEOPIXEL_5": "NEOPIXEL_5",
-              "NEOPIXEL_6": "NEOPIXEL_6",
-              "NEOPIXEL_7": "NEOPIXEL_7",
-              "NEOPIXEL_8": "NEOPIXEL_8",
-              "NEOPIXEL_9": "NEOPIXEL_9",
-              "NEOPIXEL_10": "NEOPIXEL_10",
-              "NEOPIXEL_11": "NEOPIXEL_11",
-              "NEOPIXEL_12": "NEOPIXEL_12",
-              "NEOPIXEL_13": "NEOPIXEL_13",
-              "NEOPIXEL_14": "NEOPIXEL_14",
-              "NEOPIXEL_15": "NEOPIXEL_15",
-              "NEOPIXEL_16": "NEOPIXEL_16",
-              "NEOPIXEL_17": "NEOPIXEL_17",
-              "NEOPIXEL_18": "NEOPIXEL_18",
-              "NEOPIXEL_19": "NEOPIXEL_19",
-              "NEOPIXEL_20": "NEOPIXEL_20",
-              "NEOPIXEL_21": "NEOPIXEL_21",
-              "NEOPIXEL_22": "NEOPIXEL_22",
-              "NEOPIXEL_23": "NEOPIXEL_23"
+    "NEOPIXEL_0": "NEOPIXEL_0",
+    "NEOPIXEL_1": "NEOPIXEL_1",
+    "NEOPIXEL_2": "NEOPIXEL_2",
+    "NEOPIXEL_3": "NEOPIXEL_3",
+    "NEOPIXEL_4": "NEOPIXEL_4",
+    "NEOPIXEL_5": "NEOPIXEL_5",
+    "NEOPIXEL_6": "NEOPIXEL_6",
+    "NEOPIXEL_7": "NEOPIXEL_7",
+    "NEOPIXEL_8": "NEOPIXEL_8",
+    "NEOPIXEL_9": "NEOPIXEL_9",
+    "NEOPIXEL_10": "NEOPIXEL_10",
+    "NEOPIXEL_11": "NEOPIXEL_11",
+    "NEOPIXEL_12": "NEOPIXEL_12",
+    "NEOPIXEL_13": "NEOPIXEL_13",
+    "NEOPIXEL_14": "NEOPIXEL_14",
+    "NEOPIXEL_15": "NEOPIXEL_15",
+    "NEOPIXEL_16": "NEOPIXEL_16",
+    "NEOPIXEL_17": "NEOPIXEL_17",
+    "NEOPIXEL_18": "NEOPIXEL_18",
+    "NEOPIXEL_19": "NEOPIXEL_19",
+    "NEOPIXEL_20": "NEOPIXEL_20",
+    "NEOPIXEL_21": "NEOPIXEL_21",
+    "NEOPIXEL_22": "NEOPIXEL_22",
+    "NEOPIXEL_23": "NEOPIXEL_23"
   },
-  "groundPins": ["GND"],
-  "threeVoltPins": ["VCC"],
+  "groundPins": [
+    "GND"
+  ],
+  "threeVoltPins": [
+    "VCC"
+  ],
   "fiveVoltPins": [],
   "i2cPins": {
     "SDA": "A4",
     "SCL": "A5"
   },
-  "onboardComponents": ["pixel"]
+  "onboardComponents": [
+    "pixel"
+  ]
 }

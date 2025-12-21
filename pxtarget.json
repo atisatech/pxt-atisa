@@ -32,7 +32,8 @@
         "libs/feather",
         "libs/proximity",
         "libs/kwanzaa-kinara-lantern",
-        "libs/chanukah-menorah-lantern"
+        "libs/chanukah-menorah-lantern",
+        "libs/philippine-parol-lantern"
     ],
     "serial": {
         "useHF2": true,
@@ -74,6 +75,12 @@
                 "url": "libs/chanukah-menorah-lantern",
                 "variant": "samd21",
                 "cardImage": "/pxt-atisa/docs/static/libs/chanukah-menorah-lantern.jpg"
+            },
+            {
+                "name": "Philippine Parol PCB v1",
+                "url": "libs/philippine-parol-lantern",
+                "variant": "samd21",
+                "cardImage": "/pxt-atisa/docs/static/libs/philippine-parol-lantern.jpg"
             }
         ],
         "messageSimulators": {
