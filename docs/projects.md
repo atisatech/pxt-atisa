@@ -13,6 +13,10 @@
     {
         "name": "Philippine Parol Tutorials",
         "url": "/projects/parol"
+    },
+    {
+        "name": "Christmas Ornament Tutorials",
+        "url": "/projects/ornament"
     }
 ]
 ```
@@ -21,5 +25,6 @@
 
 [Video Guides](/projects/video-guides),
 [Chanukah Menorah Tutorials](/projects/chanukah),
-[Philippine Parol Tutorials](/projects/parol)
+[Philippine Parol Tutorials](/projects/parol),
+[Christmas Ornament Tutorials](/projects/ornament)
 
